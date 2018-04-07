@@ -29,4 +29,4 @@ Just clone or download, open terminal in the folder of the project and type "rai
 Solo descarga o clona el proyecto, abre terminal en la posicion de la carpeta y escribe el comando "rails s" luego accede a "localhost:3000" en tu navegador favorito
 
 
-# HackBoardAlpha
+
