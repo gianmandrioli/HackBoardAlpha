@@ -1,0 +1,18 @@
+.col-3
+    = link_to  new_group_post_path(@group) do
+        %button.btn.btn-light.fullw.shadow{:type => "button"}
+            Nuevo Post
+            %i.fas.fa-plus-square
+    #v-pills-tab.nav.flex-column.nav-pills.backblue.br2.shadow.grouphov{"aria-orientation" => "vertical", :role => "tablist"}
+        = render "groups/group_names"
+    -# %a#v-pills-home-tab.nav-link.active.text-center.fwhite.grouphov{"aria-controls" => "v-pills-home", "aria-selected" => "true", "data-toggle" => "pill", :href => "#v-pills-home", :role => "tab"}
+        
+            -# %i.fas.fa-user{:href => "group/users"}
+        -# %a#v-pills-profile-tab.nav-link.text-center.fwhite.grouphov{"aria-controls" => "v-pills-profile", "aria-selected" => "false", "data-toggle" => "pill", :href => "#v-pills-profile", :role => "tab"} 
+        -#     Promo 8
+        -#     %i.fas.fa-user{:href => "group/users"}
+            
+        -# %a#v-pills-messages-tab.nav-link.text-center.fwhite.grouphov{"aria-controls" => "v-pills-messages", "aria-selected" => "false", "data-toggle" => "pill", :href => "#v-pills-messages", :role => "tab"} Viajelandia internacional
+        -# %a#v-pills-settings-tab.nav-link.text-center.fwhite.grouphov{"aria-controls" => "v-pills-settings", "aria-selected" => "false", "data-toggle" => "pill", :href => "#v-pills-settings", :role => "tab"} tech
+
+        = render 'users/user', user: current_user

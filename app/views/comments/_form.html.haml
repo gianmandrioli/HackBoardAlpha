@@ -1,0 +1,16 @@
+.container.ml-1.commentnew.brb.borderg.br2.mt-2
+    .col-12
+        = form_for [@group, @post, @comment] do |f|
+            .row.mb-2.commentnew
+                .col-12.mb-3
+                    .form-group
+                    = f.hidden_field :text, class: 'form-control inpcom#comment fs autoExpand', required: true, "data-min-rows" => "1", :rows => "1", id: :post_body
+                    %trix-editor{:input => "post_body", style: "width: 100%;", placeholder: "Yo opino...",class: "comment"}
+                .col-12.commentnew.text-center.mb-4
+                    %button.btn.btn-light.fullw.shadow{:class => "submit text-center"} Comentar
+
+
+
+
+
+               

@@ -1,0 +1,11 @@
+- @groups.each do |group|
+    .col-12.p0 
+        .row.grouprow
+            .col-9.p0#colsidebar.text-center
+                = link_to  group_posts_path(group),id: "botonsidebar", class: "groupbut d-inline-block #{current_class?( group_posts_path(group))}" do
+                    %div.ml-5.namewidth
+                        = group.name
+            .col-3.p0#colsidebar
+                = link_to  group_users_path(group), id: "botonsidebar", class: "groupbut d-inline-block #{current_class?( group_users_path(group))}"  do
+                    %i.fas.fa-user{:href => "group/users"}
+                    = group.users.length

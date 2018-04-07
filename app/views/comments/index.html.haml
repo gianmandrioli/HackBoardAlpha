@@ -1,0 +1,56 @@
+-# .col-8
+-#     .container.borderg.mt-1.ml-1.br2
+-#         .row
+-#             .col-1.text-center.mt-2.mb-2
+-#                 %img.border.rounded-circle.img-circle{:alt => "Cinque Terre", :height => "60", :src => "https://vignette.wikia.nocookie.net/gravityfalls/images/5/59/Pato_apariencia.png/revision/latest?cb=20160306162043&path-prefix=es", :width => "60"}/
+-#             .col-11.mt-4.mb-3.titlepost
+-#                 = @post.title
+-#                 %a.fsmall{:href => "/"} 
+-#                     = @post.user.name
+-#         .row
+-#             .col-11.mb-3.ml-4
+-#                 = @post.text
+-#         .row
+-#             .col-4.fechapost.mt-1
+-#                 = @post.created_at
+-#             .col-3
+-#             .col-2
+-#                 %i.far.fa-hand-peace
+-#                 222  
+-#             .col-2 
+-#                 %i.fas.fa-comments
+-#                 1202    
+-#             .col-1
+-#                 %i.far.fa-bookmark   
+-#         .row
+-#             = link_to 'Back', group_posts_path
+-#         - if current_user.id == @post.user.id
+-#             .row
+-#                 = link_to 'Edit', edit_group_post_path(@group.id, @post.id)
+-#     .col-12
+-#         .container.ml-1.comment
+-#             .col-12.fs
+-#                 .row.ml-2.p0 
+-#                     %spam.fs.mt-2
+-#                         Gian Marco Mandrioli:   
+-#                     %spam.fxs.ml-3.mt-2
+-#                         4/12/42                                        
+-#                 .row.fxs.mt-2
+-#                     .col-1        
+-#                     .col-11
+-#                         Yo opino, que opinar es necesario, Porque tengo inteligencia, y por eso siempre opino. Yo opino que si opino un pensamiento que me venga a la cabeza Ago critica social. Yo opino de lo humano y lo divino Y a veces digo con tino mi opinión es opinar. Yo opino que el gobierno esta en lo cierto y también equivocado dependiendo de que lado
+-#                 .row
+-#                     .col-10          
+-#                     .col-2.fxs.mb-2
+-#                         %i.ml-4.far.fa-hand-peace.mt-2
+-#                         420
+-#         .container.ml-1.comment.brb
+-#             .col-12
+-#                 .row.footerpost.brt.fwhite.brb.mb-2
+-#                     .col-2
+-#                         %label.ml-3.mt-1{:for => "comment"} Comenta:
+-#                     .col-8
+-#                         %textarea.text_comment.inpcom#comment.fs.form-control{:placeholder => "Yo opino ...", :onkeyup => "auto_grow(this)", :style => "overflow:hidden"}
+-#                     .col-2
+-#                         %button.btn.btn-light.fullw.shadow{:class => "submit"} Enviar
+                       

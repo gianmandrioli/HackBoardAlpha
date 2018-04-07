@@ -1,0 +1,22 @@
+.modal.fade{id: "#{@posts.user.name}", "aria-hidden" => "true", "aria-labelledby" => "exampleModalCenterTitle", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog.modal-dialog-centered{:role => "document"}
+        .modal-content
+            .modal-header.commentnew
+                Perfil                                                                                
+                %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+                %span{"aria-hidden" => "true"}
+                    %i.fas.fa-times
+            .modal-body
+                %div#exampleModalLongTitle.text-center.modal-title.namexp
+                    = post.user.name
+                %div#exampleModalLongTitle.text-center.modal-title.namexp
+                    = image_tag post.user.avatar.url(:medium), class: "rounded-circle round-image-50" 
+                %hr.lower
+                %div#exampleModalLongTitle.text-center
+                    = post.user.title
+                %hr.lower
+                %div#exampleModalLongTitle.text-center
+                    = post.user.email
+                %hr.lower
+                %div#exampleModalLongTitle.text-center
+                    = post.user.mobile   

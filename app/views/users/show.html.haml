@@ -1,0 +1,17 @@
+.modal-body
+    %div#exampleModalLongTitle.text-center.modal-title.namexp
+        = current_user.name
+    %div.text-center    
+        = image_tag current_user.avatar.url(:medium), class: "rounded-circle round-image-50" 
+    %hr.lower
+    %div#exampleModalLongTitle.text-center
+        = current_user.title
+    %hr.lower
+    %div#exampleModalLongTitle.text-center
+        = current_user.email
+    %hr.lower
+    %div#exampleModalLongTitle.text-center
+        = current_user.mobile   
+    %hr.lower    
+    = link_to 'Editar', edit_user_path(@groups) , class: 'btn btn-light fullw borderg'
+    %hr.lower   

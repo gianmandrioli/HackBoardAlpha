@@ -1,0 +1,55 @@
+.col-8
+    - @posts.each do |post|
+        .container.mt-3.ml-1.br2.borderg.p0.mb-5#containerpost
+            .col-12.p0
+                .col-1.text-center.mt-2.mb-2.float-left.front.d-inline-block.p0
+                    = link_to "/search?utf8=✓&keywords=#{post.user.name}&button=" do
+                    
+                        = image_tag post.user.avatar.url(:medium), class: "rounded-circle round-image-small borderg postimg" 
+                .col-10.titlepost.titlepostmargin
+                    = link_to group_post_path(@group.id, post.id) do
+                        
+                        = post.title 
+                    
+                    .row.fxs.ml-1.fsmall
+                        
+                        - if post.category == "Anuncio"
+                            %i.fas.fa-bullhorn.mr-1
+                        - elsif post.category == "Pregunta"
+                            %i.fas.fa-question.mr-1
+                        - else
+                            %i.fas.fa-lightbulb.mr-1
+                        = post.category        
+                        por
+                        %a.fsmall.ml-1.namecolor{:href => "/search?utf8=✓&keywords=#{post.user.name}&button="}
+                            = post.user.name 
+                    
+                    
+            .row
+                .col-11.mb-3
+                    = truncate( (sanitize post.text), :length => 300)
+            .row.footerpost.br2.fwhite
+                .col-4.fechapost.mt-1
+                    = time_ago_in_words(post.created_at)
+                .col-3
+                .col-2
+                    -# = link_to api_v1_user_post_clap_path(@group.id, post.id), method: :delete do     
+                    -#     %i.fas.fa-ban
+                    = link_to clap_group_post_path(@group.id, post.id), method: :put do     
+                        %i.far.fa-hand-peace
+                            = @claps.where(post_id: post.id).size
+                .col-2 
+                    = link_to group_post_path(@group.id, post.id) do
+                        %i.fas.fa-comments
+                        = post.comments.size    
+                .col-1
+                    = link_to like_group_post_path(@group.id, post.id), method: :put do 
+                        - if ActsAsVotable::Vote.find_by(votable_id: post.id,voter_id: @user.id) != nil
+                        
+                            %i.fas.fa-star{style: "color: orange"}
+                          
+                        - else 
+                            %i.fas.fa-star{style: "color: white"}
+                    
+
+                                

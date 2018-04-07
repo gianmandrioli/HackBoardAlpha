@@ -1,0 +1,62 @@
+.col-5.text-center.ml-5.borderg
+
+  %h2.mb-5.mt-3.text-center
+    .div.float-left
+      = link_to '← Back', :back, class: 'btn btn-light'
+    Edicion de Usuario
+    .div.btn.btn-light.logout.float-right.p0
+      #{button_to "Eliminar cuenta", registration_path(resource_name), data: { confirm: "¿Estas seguro?" }, method: :delete} 
+  .row.ml-3.text-center 
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = devise_error_messages!
+      .field.mb-4.text-center
+        .row.text-center
+          = image_tag @user.avatar.url(:medium), class: "rounded-circle round-image-50 d-block"
+        .row  
+          = f.file_field :avatar 
+      .field.mb-4.mt-4.text-center
+        = f.label 'Nombre y Apellido'
+        %br/
+        = f.text_field :name, autofocus: true, autocomplete: "name"
+      .field.mb-4.text-center
+        = f.label 'Título'
+        %br/
+        -# = f.select :title, User.titles.keys.map { |w| [w, w] }, selected: 'Estudiante', class: 'selectpicker'
+        = f.select(:title, User.titles.keys.map { |w| [w, w] }, {})
+      .field.mb-4.text-center
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        %div
+          Currently waiting confirmation for: #{resource.unconfirmed_email}
+      .field.mb-4.text-center
+        = f.label 'Teléfono'
+        %br/
+        = f.number_field :mobile,id: "telNo",type: "tel", autocomplete: "mobile"
+
+
+      .field.mb-4.text-center
+        = f.label 'Nueva contraseña'
+        %i (Dejar vacío el campo si no desea campiar la contraseña)
+        %br/
+        = f.password_field :password, autocomplete: "off"
+        - if @minimum_password_length
+          %br/
+          %em
+            = @minimum_password_length
+            caracteres mínimo
+      .field.mb-4.text-center
+        = f.label 'Confirmar contraseña'
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "off"
+      .field.mb-4.text-center
+        = f.label 'Contraseña actual'
+        %i (Debe ingresar su contraseña actual para guardar los cambios)
+        %br/
+        = f.password_field :current_password, autocomplete: "off"
+      .actions.mb-3.text-center
+        = f.submit "Guardar"
+    
+    
+    

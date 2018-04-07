@@ -1,0 +1,25 @@
+.container.justify-content-md-center
+  .col.col-lg-2
+  .col-md-auto
+    .row
+      .col-6 
+        =image_tag "hackboard_logo.svg", class: "logosign"
+      .col-6
+        .card
+          %ul#pills-tab.nav.nav-pills.mb-3{:role => "tablist"}             
+            %li.nav-item
+              %a#pills-home-tab.nav-link.active{"aria-controls" => "pills-home", "aria-selected" => "true", "data-toggle" => "pill", :href => "#pills-home", :role => "tab"} ¿Olvidaste tu contraseña?
+    
+          #pills-tabContent.tab-content
+            #pills-home.tab-pane.fade.show.active{"aria-labelledby" => "pills-home-tab", :role => "tabpanel"} 
+              = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+                = devise_error_messages!
+                .field
+                  = f.label 'Correo'
+                  %br
+                  = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+                  %br
+                .actions
+                  = f.submit "Enviarme nueva contraseña"
+              = render "users/shared/links"
+  .col.col-lg-2

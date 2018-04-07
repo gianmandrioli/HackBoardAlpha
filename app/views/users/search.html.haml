@@ -1,0 +1,22 @@
+.col-9
+    %h2
+        = link_to root_path do
+            = icon 'fas', 'angle-left'
+        Resultado de la busqueda
+    .row
+        - if @users.empty?
+            .row.justify-content-center
+                .col-12
+                %h6.text-center No pudimos conseguir ningún usuario que coincida con los criterios de busqueda.
+        - else
+            - @users.each do |user|
+                = render user
+                .div.col-3.framestyle.marginframe.mt-4
+                    #navbarDropdown.nav-link.card.borderg{"data-target" => "##{user.name}#{user.id}", "data-toggle" => "modal", :type => "button"}
+                        %div.name.titlepost.mt-1
+                            = user.name
+                        = image_tag user.avatar.url(:medium), class: "rounded-circle round-image-small imagemargin", style: "margin-left: 35%;" 
+                        %div.title
+                            = user.title
+                        %div.email 
+                            = user.email

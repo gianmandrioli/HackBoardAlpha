@@ -1,0 +1,17 @@
+.container.justify-content-md-center
+  .col.col-lg-2
+  .col-md-auto
+    .row
+      .col-6.logo_academy 
+        =image_tag "hackboard_logo.svg", class: "logosign"
+        %p.ml-5.pl-5{:style => "font-family: georgia", :style => "font-size: 30px"}
+          Administración
+      .col-6
+        .card
+          %ul#pills-tab.nav.nav-pills.mb-3{:role => "tablist"}             
+            %li.nav-item
+              %a#pills-home-tab.nav-link.active{"aria-controls" => "pills-home", "aria-selected" => "true", "data-toggle" => "pill", :href => "#pills-home", :role => "tab"} Iniciar Sesión
+          #pills-tabContent.tab-content
+            #pills-home.tab-pane.fade.show.active{"aria-labelledby" => "pills-home-tab", :role => "tabpanel"} 
+              = render "admins/sessions/new"
+  .col.col-lg-2

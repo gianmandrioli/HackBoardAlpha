@@ -1,0 +1,51 @@
+.col-8
+    .container.borderg.mt-1.ml-1.br2
+        = form_for [@group, @post] do |f|
+            .row
+                .col-1.p0
+                    = link_to '← Back', group_posts_path, class: 'btn btn-light'
+                .col-1.text-center.mt-5.mb-2.mr-1.ml-1
+                    = image_tag current_user.avatar.url(:medium), class: "rounded-circle round-image-small" 
+
+                .col-9.mt-5.mb-3.titlepost
+                    .form-group
+                        %b
+                        = f.label 'Titulo:'
+                        = f.text_field :title, class: 'form-control', required: true
+                
+            .row
+                .col-11.mb-3.ml-4
+                    .form-group
+                        %b
+                        -# = f.label 'Texto'
+                        = f.hidden_field :text, class: 'form-control', id: :post_body
+                        %trix-editor{:input => "post_body", required: true}
+                        
+            .row.footerpostform.formwidth.br2.fwhite
+                .col-5.fechapost
+                    .form-group{:action => ""}
+                        %label.ml-5.mt-2.mr-2#labanuncio                                    
+                            = f.radio_button :category, "Anuncio", class: 'form-control', required: true
+                            %i.fas.fa-bullhorn.imgbox 
+                        %label.ml-5.mt-2.mr-2#labpregunta 
+                            = f.radio_button :category , "Pregunta" , class: 'form-control', required: true
+                            %i.fas.fa-question.imgbox
+                        %label.ml-5.mt-2.ml-2#labidea       
+                            = f.radio_button :category, "Idea", class: 'form-control', required: true 
+                            %i.fas.fa-lightbulb.imgbox
+                         
+                    %label.categoriapost
+                        %p#ingresacategoria
+                            Para publicar selecciona una categoria
+                        %p#anunciocat.ml-5
+                            Tu post es un Anuncio
+                        %p#ideacat.ml-5    
+                            Tu post es una Idea
+                        %p#preguntacat.ml-5
+                            Tu post es una Pregunta                     
+                .col-3        
+                .col-2.mt-4.text-right
+                    = f.submit 'Publicar', class: 'btn btn-light viaje borderg'
+                 
+
+            

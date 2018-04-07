@@ -1,0 +1,11 @@
+{:uriI"ﬁfile:///Users/gabrielburgazzi/Desktop/Hack/Proyecto_Final/Proyecto/Proyecto_HackBoard_V6%20copy/app/assets/config/environment_variables.yml?type=text/yaml&id=74e4d2c2a4b3c014deb385aa32121cf548821161fd17d6e4e365de197d159b49:ET:load_pathI"app/assets/config;T:filenameI"0app/assets/config/environment_variables.yml;T:	nameI"environment_variables;T:logical_pathI"environment_variables.yml;T:content_typeI"text/yaml;T:sourceI"rdevelopment:
+  DB_USER: 'YOUR_USER'
+  DB_PASS: 'YOU_PASS'
+test:
+  DB_USER: 'YOUR_USER'
+  DB_PASS: 'YOU_PASS'
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/yaml&file_type=text/yaml;TTI"ífile-digest:///Users/gabrielburgazzi/Desktop/Hack/Proyecto_Final/Proyecto/Proyecto_HackBoard_V6%20copy/app/assets/config/environment_variables.yml;TTF:charsetI"
+utf-8;F:digest"%’Á∞YÏˆÏÊÍ+Cê<)…å«^ÕiQ\-√:lengthir:dependencies_digest"%^êáVc^‹á%_<†≥Xoﬁ‘ÑÓ”=M{xaZw:idI"E74e4d2c2a4b3c014deb385aa32121cf548821161fd17d6e4e365de197d159b49;F:
+mtimel+;öZ

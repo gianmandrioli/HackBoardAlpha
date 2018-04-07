@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css",:rel => "stylesheet"}
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title HackBoard
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    - if user_signed_in?
+      = render partial: "layouts/header"
+      .row
+        = render partial: "layouts/sidebar"
+        = yield  
+      = render partial: "layouts/footer"
+    - else
+      .container.mt-5
+      = yield
+   

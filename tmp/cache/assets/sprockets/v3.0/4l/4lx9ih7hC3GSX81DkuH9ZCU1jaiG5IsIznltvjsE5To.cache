@@ -1,0 +1,11 @@
+{:uriI"…file://app/assets/config/environment_variables.yml?type=text/yaml&id=adce0e38925059b1473cb64e5e947051937e9cd6b26b5e0ca7b6fab9cfffa8f8:ET:load_pathI"app/assets/config;T:filenameI"0app/assets/config/environment_variables.yml;T:	nameI"environment_variables;T:logical_pathI"environment_variables.yml;T:content_typeI"text/yaml;T:sourceI"rdevelopment:
+  DB_USER: 'YOUR_USER'
+  DB_PASS: 'YOU_PASS'
+test:
+  DB_USER: 'YOUR_USER'
+  DB_PASS: 'YOU_PASS'
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/yaml&file_type=text/yaml;TTI">file-digest://app/assets/config/environment_variables.yml;TTF:charsetI"
+utf-8;F:digest"%Õç°Yìöìæê+C<)ÉŒÇ^ÍiQ\ğ-Ã:lengthir:dependencies_digest"%~ ÒéŒÕ5¿¢…!R|yP'§·ëÀÂºĞ†Ñ	Wzôä:idI"Eadce0e38925059b1473cb64e5e947051937e9cd6b26b5e0ca7b6fab9cfffa8f8;F:
+mtimel+;šZ

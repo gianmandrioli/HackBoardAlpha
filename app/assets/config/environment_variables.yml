@@ -1,0 +1,6 @@
+development:
+  DB_USER: 'YOUR_USER'
+  DB_PASS: 'YOU_PASS'
+test:
+  DB_USER: 'YOUR_USER'
+  DB_PASS: 'YOU_PASS'
