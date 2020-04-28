@@ -5,56 +5,53 @@
         %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
             %span.navbar-toggler-icon
         #navbarSupportedContent.collapse.navbar-collapse
-            %ul.navbar-nav.mr-auto
-                %li.nav-item
+            %ul.navbar-nav.fullw           
+                %li.nav-item.col-3.icon-top
                     %a.nav-link.headerbut{:href => trending_path} 
-                        %i.fas.icon.fa-chart-line.fcblue 
+                        %i.fas.icon.fa-chart-line.fcblue.d-flex
                             %p.d-none.d-md-inline.fcblue 
                                 Tendencia
-                %li.nav-item
+                %li.nav-item.col-3.icon-top
                     %a.nav-link.headerbut{:href => favorites_path} 
-                        %i.fas.icon.fa-star.fcblue 
+                        %i.fas.icon.fa-star.fcblue.d-flex
                             %p.d-none.d-md-inline.fcblue 
                                 Favoritos
 
-
+                %li.nav-item.col-3.icon-top-bar
     
-
                     -# %input.form-control.mr-sm-2.ml-4{"aria-label" => "Search", :placeholder => "Buscar...", :type => "search", :style => "width: 420px;"}/
-                = form_tag users_search_path, class: 'form-inline imh', method: :get do
-                    = text_field_tag :keywords, params[:keywords], id: 'searchText', class: 'flex-2 form-control mr-2 w-60', placeholder: 'Busqueda de usuarios'
-                    = button_tag(type: "submit", id: 'searchButton', class: "btn commentnew my-2") do
-                        = icon :fas, :search
-            .nav-item.dropdown
-                %a#navbarDropdown.nav-link.dropdown-toggle.profilebut.fcblue{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                    %i.fas.fa-user
-                    %spam.d-none.d-md-inline  
-                        = current_user.name
-                .dropdown-menu.borderg.p0{"aria-labelledby" => "navbarDropdown"}
-                    .modal-header.commentnew
-                        Perfil
-                        
-                            
-                            
-                        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-                        %span{"aria-hidden" => "true"}
-                            %i.fas.fa-times
-                    .modal-body
-                        %div#exampleModalLongTitle.text-center.modal-title.namexp
-                            = current_user.name
-                        = image_tag current_user.avatar.url(:medium), class: "rounded-circle round-image-50" 
-                        %hr.lower
-                        %div#exampleModalLongTitle.text-center
-                            = current_user.title
-                        %hr.lower
-                        %div#exampleModalLongTitle.text-center
-                            = current_user.email
-                        %hr.lower
-                        %div#exampleModalLongTitle.text-center
-                            = current_user.mobile   
-                        %hr.lower    
-                        = link_to 'Editar', edit_user_path(current_user) , class: 'btn btn-light fullw borderg'
-                        %hr.lower                                           
-                        = link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'btn btn-light fullw logout borderg'
+                    = form_tag users_search_path, class: 'd-flex', method: :get do
+                        = text_field_tag :keywords, params[:keywords], id: 'searchText', class: 'flex-2 form-control', placeholder: 'Busqueda de usuarios'
+                        = button_tag(type: "submit", id: 'searchButton', class: "btn commentnew") do
+                            = icon :fas, :search
+                %li.nav-item.col-3.icon-topprofile 
+                    .nav-item.dropdown(class= "allign-left d-table-row")
+                        %a#navbarDropdown.nav-link.dropdown-toggle.profilebut.fcblue{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                            %i.fas.fa-user
+                            %spam.d-none.d-md-inline  
+                                = current_user.name
+                        .dropdown-menu.borderg.p0{"aria-labelledby" => "navbarDropdown"}
+                            .modal-header.commentnew
+                                Perfil 
+                                %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+                                %span{"aria-hidden" => "true"}
+                                    %i.fas.fa-times
+                            .modal-body
+                                %div#exampleModalLongTitle.text-center.modal-title.namexp
+                                    = current_user.name
+                                = image_tag current_user.avatar.url(:medium), class: "rounded-circle round-image-50" 
+                                %hr.lower
+                                %div#exampleModalLongTitle.text-center
+                                    = current_user.title
+                                %hr.lower
+                                %div#exampleModalLongTitle.text-center
+                                    = current_user.email
+                                %hr.lower
+                                %div#exampleModalLongTitle.text-center
+                                    = current_user.mobile   
+                                %hr.lower    
+                                = link_to 'Editar', edit_user_path(current_user) , class: 'btn btn-light fullw borderg'
+                                %hr.lower                                           
+                                = link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'btn btn-light fullw logout borderg'
 
 

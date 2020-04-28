@@ -34,7 +34,16 @@ body{
     opacity: 0.8;
 
 }
+.icon-top{
+    margin-top: 2%;
+}
+.icon-topprofile{
+    margin-top: 2%;
 
+}
+.icon-top-bar{
+    margin-top: 2.5%;
+}
 .logo:hover{
     opacity: 1;
 }
@@ -43,7 +52,6 @@ body{
 .icon{
 font-size: 25px;
 opacity: 0.7;
-margin-left: 15px;
 }
 .icon:hover{
     opacity: 1;
@@ -154,6 +162,7 @@ margin-left: 15px;
     .nav-pills .show>.nav-link {
     color: #0b0101;
     background-color: #fff;
+    width: 100%;
     }
 
     .backblue{
@@ -178,7 +187,7 @@ margin-left: 15px;
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .headerbut{
-    width: 200px;
+    width: 25%;
 }
 
 .active{
@@ -193,8 +202,7 @@ margin-left: 15px;
 }
 
 .imh {
-    width: 500px;
-    margin-left: 5%;
+   
 }
 
 .w-60{
@@ -222,7 +230,7 @@ a:hover {
     color:#F8F9FA;
     text-decoration: none;
     border-radius: 4px;
-    width: 270px;
+    width: 100%;
 }
 .groupbut:hover {
     background: #F8F9FA;
@@ -443,8 +451,7 @@ a {
 .round-image-50 {
     background-color: white;
     border: 1px solid #d9d9d9;
-    height: 300px;
-    width: 300px;
+    width: 100%;
     overflow: hidden;
     text-align: center;
     img {
@@ -490,7 +497,7 @@ a {
 }
 
 .namewidth{
-    width: 155px;
+    width: 100%;
 }
 
 .postimg{
