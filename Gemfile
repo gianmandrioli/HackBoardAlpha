@@ -42,7 +42,7 @@ gem 'pundit'
 
 gem 'trix'
 gem 'devise'
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem "haml-rails", "~> 1.0"
 gem "paperclip", "~> 5.2.1"
